@@ -3,9 +3,9 @@ Trabajo de Fin de Máster que consiste en la automatización de simulaciones de 
 
 # TFM Crashworthiness IA
 
-Proyecto para entrenar modelos XGBoost con resultados FEM de Abaqus y usarlos para predecir, optimizar y generar frentes de Pareto de geometrias de tubos.
+Proyecto para entrenar modelos XGBoost con resultados FEM de Abaqus y usarlos para predecir, optimizar y generar frentes de Pareto de geometrías de tubos.
 
-## Instalacion
+## Instalación
 
 ```bash
 python -m venv .venv
@@ -21,14 +21,14 @@ Ejecuta el asistente:
 python asistente.py
 ```
 
-Desde el menu puedes:
+Desde el menú se puede:
 
 - Entrenar modelos.
-- Predecir una geometria.
-- Predecir varias geometrias desde CSV.
-- Buscar mejores geometrias SEA/CFE.
+- Predecir una geometría.
+- Predecir varias geometrías desde CSV.
+- Buscar mejores geometrías SEA/CFE.
 - Generar frentes de Pareto.
-- Ver metricas.
+- Ver métricas.
 
 ## Datos
 
@@ -38,7 +38,7 @@ El archivo de entrada principal es:
 datos/simulaciones.csv
 ```
 
-Columnas geometricas esperadas:
+Columnas geométricas esperadas:
 
 ```text
 Radio, Angulo, Num_Ag, Radio_Ag, Factor_H
@@ -52,12 +52,12 @@ SEA, CFE
 
 ## Archivos principales
 
-- `asistente.py`: menu principal.
+- `asistente.py`: menú principal.
 - `entrenamiento.py`: entrena los modelos.
-- `prediccion.py`: predice nuevas geometrias.
+- `prediccion.py`: predice nuevas geometrías.
 - `optimizacion.py`: busca mejores candidatos.
 - `pareto.py`: genera frentes de Pareto.
-- `requirements.txt`: librerias necesarias.
+- `requirements.txt`: librerías necesarias.
 
 ## Resultados
 
