@@ -68,6 +68,7 @@ def guardar_grafica_real_vs_predicho(y_real, y_predicho, objetivo):
     ruta_grafica = carpeta_resultados / f"real_vs_predicho_{objetivo.lower()}.png"
     minimo = min(y_real.min(), y_predicho.min())
     maximo = max(y_real.max(), y_predicho.max())
+    etiqueta_objetivo = "SEA [kJ/kg]" if objetivo == "SEA" else objetivo
 
     plt.figure(figsize=(7, 6))
     plt.scatter(y_real, y_predicho, alpha=0.75, edgecolor="black", linewidth=0.4)
@@ -76,10 +77,11 @@ def guardar_grafica_real_vs_predicho(y_real, y_predicho, objetivo):
         [minimo, maximo],
         color="red",
         linestyle="--",
-        label="Prediccion perfecta",
+        label="Predicción perfecta",
     )
-    plt.xlabel(f"{objetivo} real")
-    plt.ylabel(f"{objetivo} predicho")
+    
+    plt.xlabel(f"{etiqueta_objetivo} real")
+    plt.ylabel(f"{etiqueta_objetivo} predicho")
     plt.title(f"{objetivo}: real vs predicho")
     plt.grid(True, alpha=0.3)
     plt.legend()
