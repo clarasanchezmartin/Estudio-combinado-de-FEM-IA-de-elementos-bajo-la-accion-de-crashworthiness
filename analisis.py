@@ -10,8 +10,8 @@ os.environ.setdefault("MPLCONFIGDIR", str(raiz / ".matplotlib-cache"))
 
 import matplotlib.pyplot as plt
 
-datos = raiz / "datos" / "simulaciones.csv"
-resultados = raiz / "resultados"
+datos = raiz / "machine learning" / "datos" / "simulaciones.csv"
+resultados = raiz 
 
 # Columnas que se van a usar para el analisis
 columnas = [
