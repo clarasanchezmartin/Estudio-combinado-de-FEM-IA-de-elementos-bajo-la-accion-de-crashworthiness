@@ -14,10 +14,10 @@ import inspect
 dirbase = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 os.chdir(dirbase)
 
-# Parametros para obtener la masa del cilindro (en mm y kg/m3)
+# Parametros para obtener la masa del cilindro (en mm y kg/mm3)
 altura_cilindro = 200.0 
 espesor_cilindro = 3.0
-densidad = 2.77e-09  
+densidad = 2.77e-06
 
 inps = 'generacion_inps.py'
 
@@ -136,9 +136,9 @@ def PostProcessing(radio_cilindro, angulo_taper, num_agujeros, radio_agujero, fa
 
     # Crear un png con la grafica f-d
     plt.figure(figsize=(8, 6))
-    plt.plot(np.abs(u), np.abs(rf), 'b-', label='Respuesta')
+    plt.plot(np.abs(u), np.abs(rf)/1000, 'b-', label='Respuesta')
     plt.xlabel('Desplazamiento |U3| (mm)')
-    plt.ylabel('Fuerza |RF3| (N)')
+    plt.ylabel('Fuerza |RF3| (kN)')
     plt.title('Fuerza vs Desplazamiento')
     plt.grid(True)
     plt.legend()
@@ -147,9 +147,9 @@ def PostProcessing(radio_cilindro, angulo_taper, num_agujeros, radio_agujero, fa
 
     # Crear un png con la grafica ALLIE
     plt.figure(figsize=(8, 6))
-    plt.plot(tiempo_energia, allie, 'g-')
+    plt.plot(tiempo_energia, allie/1000000, 'g-')
     plt.xlabel('Tiempo (s)')
-    plt.ylabel('Energia (J)')
+    plt.ylabel('Energia (kJ)')
     plt.title('Energia Interna')
     plt.grid(True)
     plt.savefig(os.path.join(carpeta_graficas, nombre_base + '_energia.png'))
